@@ -1,9 +1,17 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, SafeAreaView, StatusBar, FlatList} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
-import TaskListg from './src/components/TaskList';
+import TaskList from './src/components/TaskList';
 
 export default function App(){
+    const [task, setTask] = useState([
+      {key: 1, task: 'Comprar pao'},
+      {key: 2, task: 'Estudar Rect native'},
+      {key: 3, task: 'Ir na academia hoje a noite'},
+      {key: 4, task: 'Comprar chocolate e coca cola'},
+      {key: 5, task: 'Assistir o 1 video'}
+    ]);
+
    return(
     <SafeAreaView style={styles.container}> 
     <StatusBar backgroundColor="#171d31" barStyle="ligth-content"/>
@@ -13,6 +21,7 @@ export default function App(){
     </View>
         
     <FlatList
+      marginHorinzotal={10}
       showsHorizontalScrollIndicator={false} // desativa barra de scroll
       data={task}                                // contem todos itens da lista
       keyExtractor={(item) => String(item.key)}  // cada item tem uma chave
