@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import {Ionicons} from '@expo/vector-icons';
 
-export default function TaskList() {
+export default function TaskList({data}) {
     return(
         <View style={styles.container}>
             <TouchableOpacity>
@@ -10,14 +10,14 @@ export default function TaskList() {
             </TouchableOpacity>
 
             <View>
-                <Text style={styles.text}> Comprar Pão </Text>
+                <Text style={styles.task}> {data.task} </Text>
             </View>
         </View>
         
     )
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ 
     container: {
         flex: 1,
         margin: 8,
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
             height: 3,
         }
     },
-    text: {
+    task: {
         color: '#121212',
         fontSize: 20,
         paddingLeft: 8,
