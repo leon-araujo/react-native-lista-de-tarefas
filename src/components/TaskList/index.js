@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import {Ionicons} from '@expo/vector-icons';
+import * as Animatable from 'react-native-animatable';
 
 export default function TaskList({data}) {
     return(
