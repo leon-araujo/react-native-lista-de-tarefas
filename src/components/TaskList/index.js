@@ -5,16 +5,19 @@ import * as Animatable from 'react-native-animatable';
 
 export default function TaskList({data}) {
     return(
-        <View style={styles.container}>
-            <TouchableOpacity>
-                <Ionicons name="md-checkmark-circle" size={30} color="#121212" />   
-            </TouchableOpacity>
+    <Animatable.View
+    style={styles.container}
+    animation="bounceIn"
+    useNativeDriver
+    >
+        <TouchableOpacity>
+            <Ionicons name="md-checkmark-circle" size={30} color="#121212" />   
+        </TouchableOpacity>
 
-            <View>
-                <Text style={styles.task}> {data.task} </Text>
-            </View>
+        <View>
+            <Text style={styles.task}> {data.task} </Text>
         </View>
-        
+    </Animatable.View>
     )
 }
 
